@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="description" content="TITAN Online Banking">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="all" href="stylesheet/toba.css">
+	<title>TITAN Online Banking: Home</title>
+</head>
+<body>
+<div id="page">
+<header>
+	<a class="logo" title="Titan Online Banking" href="#"></a>
+</header>
+<nav>
+	<ul>
+		<li><a href="index.html">HOME</a></li>
+		<li><a href="login.html">LOGIN</a></li>
+		<li><a href="accountActivity.html">ACCOUNT</a></li>
+		<li><a href="transaction.html">TRANSACTION</a></li>
+	</ul>
+
+</nav>
+
+<section class="main">
+<h2>WELCOME TO TITAN ONLINE BANKING</h2>
+	<aside>
+		<div class="content">
+			<h3>USER LOGIN</h3>
+			<p>Click below to login<br>to your account.</p>
+			<a class="btn" title="Login" href="login.html">LOGIN</a>
+		</div>
+	</aside>
+	
+		<div class="w3-content">
+			<img class="mySlides"  
+				src="images/onlineBank1.jpg"
+				alt="Welcome">
+			<img class="mySlides" 
+				src="images/onlineBank2.jpg"
+				alt="banking from laptop">
+			<img class="mySlides" 
+				src="images/onlineBank3.jpg"
+				alt="banking from tablet">
+			<img class="mySlides" 
+				src="images/onlineBank4.jpg"
+				alt="banking from smartphone">
+		</div>
+		
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000); 
+}
+</script>
+
+	<div id="hero">
+	<h1>YOUR BANKING ANYTIME, ANYWHERE</h1>
+	</div>		
+</section>
+
+<section class="bottom">
+	<aside>
+		<div class="address">
+			<h4>Titan Bank<br>
+			1234 Central Ave<br> 
+			Saint Petersburg, FL 33701</h4>
+			<span id="desktop">888-555-5555 </span><br>
+			<a href="mailto:contact@TOBA.com">contact@toba.com</a><br>
+		</div>
+	</aside>
+</section>
+
+       <footer>
+                &copy; 2017 TITAN Online Banking
+                <a title="Privacy Policy" href="#">Privacy Policy</a>
+                <a title="Terms of Service" href="#">Terms of Service</a>
+            </footer>
+        </div>
+    </body>
+</html>
