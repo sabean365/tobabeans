@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class PasswordResetServlet extends HttpServlet {
     
@@ -74,10 +75,10 @@ public class PasswordResetServlet extends HttpServlet {
                 message="Passwords don't match. Please try again.";
                 url = "/passwordReset.jsp";
             }
-        
             
             //set User object in session; set message in sesssion
-            request.setAttribute("password", confirmPword);
+            HttpSession session = request.getSession();
+            session.setAttribute("password", confirmPword);
             request.setAttribute("message", message);
         }
         //forward request and response objects to specified URL
