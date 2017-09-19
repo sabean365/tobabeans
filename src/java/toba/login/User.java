@@ -18,6 +18,8 @@ public class User implements Serializable {
     private String state;
     private String zip;
     private String email;
+    private String username;
+    private String password;
 
     //Zero Argument Constructor
     public User() {
@@ -29,10 +31,15 @@ public class User implements Serializable {
         state = "";
         zip = "";
         email = "";
+        username = "";
+        password = "";
+        
+        
     }
 
     //Constructor
-    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email) {
+    public User(String firstName, String lastName, String phone, String address, String city, 
+            String state, String zip, String email, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -41,6 +48,14 @@ public class User implements Serializable {
         this.state = state;
         this.zip = zip;
         this.email = email;
+        this.username = username;
+        this.password = password;
+    }
+  
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+   
     }
 
     //Get and set methods for all variables to be inputed
@@ -107,5 +122,24 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    
+    public String getUsername() {
+        return username;
+    
+    }
+     public void setUsername(String username){
+        this.username = username;
+    }
+    
+    
+    public String getPassword() {
+        return password;
+    
+    }
+     public void setPassword(String password){
+        this.password = password;
+    }
+    
 }
 

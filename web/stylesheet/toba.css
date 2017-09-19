@@ -25,6 +25,7 @@ h4 { font-size: 1em; font-weight: 400; color: #ffffff;}
 
 h5 { font-size: 1.5em; font-weight: 700; color: #000d33; text-align: left; }
 
+
 label { float: left; width: 6em; margin: 0px 20px; }
 
 input[type="text"], input[type="email"]{ width: 15em; margin-left: 20px; margin-bottom: 5px;} 
@@ -48,7 +49,10 @@ header a.logo { position: absolute; display: block; width: 116px; height: 114px;
 section { padding: 0 30px; background-color: #93e400; }
 
 /*Section main */
-section.main { margin: 0; height: 450px; font-size: 1em; color: #000d33; }
+section.main { margin: 0; padding-top: 30px; height: 600px; color: #000d33; }
+
+section.main p { margin: 0; padding: 0; color: #000000; }
+
 
 section.main aside { width: 25%; padding-right: 25px; padding-top: 20px; float: right; text-align: left; }
 
@@ -57,7 +61,7 @@ padding: 4px 25px; float: right; transition: background-color .5s; }
 
 a.btn:hover { background-color: rgba(0,0,0,.3);}
 
-section.main .content { margin: 0; background: #93e400 no-repeat top center; color: #000d33; }
+section.main .content { margin: 0; background: #93e400 no-repeat top left; color: #000d33; }
  
 
 .mySlides { display: none; margin: 25px;}
@@ -102,9 +106,4 @@ nav > ul { padding-left: 30px; }
 nav > ul > li { float: left; padding: 0px 20px; }
 nav > ul > li > a { width: 100%; padding: 5px 30px; }
 
-/* Footer */
-footer { background-color: #ffffff; font-size: .7em; color: #595959; }
-footer .content { display: inline; margin-left: 25px;}
-footer a { margin-left: 75px; color: #595959; }
-footer a:visited { color: #595959; }
-footer a:hover { color: #000000; }
+

@@ -1,23 +1,20 @@
+<%-- 
+    Document   : index
+    Created on : Sep 09, 2017, 11:01:04 AM
+    Author     : Sarah
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/includes/header.html" />
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="description" content="TITAN Online Banking">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" media="all" href="stylesheet/toba.css">
-	<title>TITAN Online Banking: Home</title>
-</head>
-<body>
-<div id="page">
-<header>
-	<a class="logo" title="Titan Online Banking" href="#"></a>
-</header>
+
 <nav>
 	<ul>
-		<li><a href="index.html">HOME</a></li>
-		<li><a href="login.html">LOGIN</a></li>
-		<li><a href="accountActivity.html">ACCOUNT</a></li>
-		<li><a href="transaction.html">TRANSACTION</a></li>
+		<li><a href="index.jsp">HOME</a></li>
+		<li><a href="login.jsp">LOGIN</a></li>
+		<li><a href="accountActivity.jsp">ACCOUNT</a></li>
+		<li><a href="transaction.jsp">TRANSACTION</a></li>
 	</ul>
 
 </nav>
@@ -28,7 +25,7 @@
 		<div class="content">
 			<h3>USER LOGIN</h3>
 			<p>Click below to login<br>to your account.</p>
-			<a class="btn" title="Login" href="login.html">LOGIN</a>
+			<a class="btn" title="Login" href="login.jsp">LOGIN</a>
 		</div>
 	</aside>
 	
@@ -76,16 +73,9 @@ function carousel() {
 			1234 Central Ave<br> 
 			Saint Petersburg, FL 33701</h4>
 			<span id="desktop">888-555-5555 </span><br>
-			<a href="mailto:contact@TOBA.com">contact@toba.com</a><br>
+			<a href="mailto:contact@TOBA.com">contact@TOBA.com</a><br>
 		</div>
 	</aside>
 </section>
 
-       <footer>
-                &copy; 2017 TITAN Online Banking
-                <a title="Privacy Policy" href="#">Privacy Policy</a>
-                <a title="Terms of Service" href="#">Terms of Service</a>
-            </footer>
-        </div>
-    </body>
-</html>
+<%@ include file="/includes/footer.jsp" %>

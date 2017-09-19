@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta name="description" content="TITAN Online Banking">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,8 +27,7 @@
 	<h5>LOGIN</h5>
 	<p>To login to your online banking, please provide your username and password below:</p>
 
-	<form method="post" action="Login">
-            <input type="hidden" name="action" value="add">
+	<form action="LoginServlet" method="post">
 		<label>*USERNAME:</label>
 		<input type="text" name="username" required="required"><br>
 		<label>*PASSWORD</label>
@@ -37,13 +37,10 @@
 	
 	<h5>REGISTER</h5>
 	<p>Would you like to use TITAN ONLINE BANKING? Click below to register.</p>
-	<form method="get" action="newCustomer.html">
-            <button type="submit" value="Register">REGISTER</button>
-            
-        </form>
-
-	
+	<form action="newCustomer.html" method="post">
+		<button type="submit" value="Register">REGISTER</a>
 </section>
+
        <footer>
                 &copy; 2017 TITAN Online Banking
                 <a title="Privacy Policy" href="#">Privacy Policy</a>
