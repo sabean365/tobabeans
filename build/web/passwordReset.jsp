@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
-<%@ page import="toba.login.Password" %>
 <%@ page import="toba.login.User" %>
 <%
     
@@ -38,7 +37,7 @@
     <form method="post" action="PasswordReset">
         <input type="hidden" name="action" value="add"> 
         <label>Current:</label>
-        <input type="password" name="password" value="${user.password}"><br>     
+        <input type="text" name="password" value="${user.password}"><br>     
         <label>New:</label>
         <input type="text" name="newPword" value="${param.newPword}"><br>
         <label>Confirm:</label>

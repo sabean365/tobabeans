@@ -37,23 +37,12 @@ public class NewCustomerServlet extends HttpServlet {
             String state = session.getParameter("state");
             String zip = session.getParameter("zip");
             String email = session.getParameter("email");
-            String username = session.getParameter("username");
-            String password = session.getParameter("password");
+            String username = session.getParameter("lastName") + session.getParameter("zip");
+            String password = "welcome1"; 
 
-            // store data in User object
-            User user = new User(firstName, lastName, phone, address, city, state, zip, email, username, password);
-
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setPhone(phone);
-            user.setAddress(address);
-            user.setCity(city);
-            user.setState(state);
-            user.setZip(zip);
-            user.setEmail(email);
-            user.setUsername(lastName + zip);
-            user.setPassword("welcome1");
-
+            //Declare user object
+            User user = null;
+            
             // validate the parameters
             String message;
             //if some of the parameters are null or empty, display message to fill out all boxes and reload NewCustomer.jsp
@@ -61,16 +50,25 @@ public class NewCustomerServlet extends HttpServlet {
                     || state == null || zip == null || email == null || firstName.isEmpty()
                     || lastName.isEmpty() || phone.isEmpty() || address.isEmpty() || city.isEmpty()
                     || state.isEmpty() || zip.isEmpty() || email.isEmpty()) {
+                
+                //prompt user to fill in all the fields
                 message = "Please fill out all text boxes.";
+                
+                //redirect to the same page for completion
                 url = "/newCustomer.jsp";
+                
             } //If registration form has been filled out correctly, then go to success.html
             else {
+                // store data in User object
+                user = new User(firstName, lastName, phone, address, city, state, zip, email, username, password);
+                  
                 message = "";
                 url = "/success.jsp";
 
             }
             
             //set User object in request; set message in request
+            
             session.setAttribute("user", user);
             session.setAttribute("message", message);
         }

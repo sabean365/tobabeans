@@ -48,7 +48,7 @@
         <span>${user.zip}</span><br><br>
         
         <p>Your username is <span>${user.username}</span></p>
-        <p>Your temporary password is <span>${user.password}</span></p>
+        <p>Your temporary password is "welcome1"</p>
         
 </section> 
         

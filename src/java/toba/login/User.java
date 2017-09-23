@@ -20,6 +20,7 @@ public class User implements Serializable {
     private String email;
     private String username;
     private String password;
+    
 
     //Zero Argument Constructor
     public User() {
@@ -48,13 +49,9 @@ public class User implements Serializable {
         this.state = state;
         this.zip = zip;
         this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-  
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
+        this.username = lastName + zip;
+        this.password = "welcome1";
+        
    
     }
 
@@ -123,16 +120,17 @@ public class User implements Serializable {
         this.email = email;
     }
     
+ 
     
     public String getUsername() {
         return username;
     
     }
+    
      public void setUsername(String username){
         this.username = username;
     }
-    
-    
+   
     public String getPassword() {
         return password;
     
