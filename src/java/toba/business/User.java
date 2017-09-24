@@ -2,7 +2,7 @@
  *User class to add member variables
  *@2017 author Sarah Bean
  */
-package toba.login;
+package toba.business;
 
 import java.io.Serializable;
 

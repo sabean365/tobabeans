@@ -4,11 +4,13 @@ NewCustomerServlet to retrieve data from newCustomer.jsp
  */
 package toba.login;
 
+import toba.business.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import toba.data.UserDB;
 
 public class NewCustomerServlet extends HttpServlet {
 
@@ -64,6 +66,7 @@ public class NewCustomerServlet extends HttpServlet {
                   
                 message = "";
                 url = "/success.jsp";
+                UserDB.insert(user);
 
             }
             

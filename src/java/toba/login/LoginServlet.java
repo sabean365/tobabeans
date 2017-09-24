@@ -4,9 +4,12 @@ Login Servlet to check username and password from login page
  */
 package toba.login;
 
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import toba.business.User;
+import toba.data.UserDB;
 
 public class LoginServlet extends HttpServlet {
 

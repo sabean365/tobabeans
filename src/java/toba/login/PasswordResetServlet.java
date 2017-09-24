@@ -4,6 +4,8 @@ PasswordResetServlet to retrieve data from PasswordReset.jsp
  */
 package toba.login;
 
+
+import toba.business.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

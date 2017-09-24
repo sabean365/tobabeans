@@ -5,6 +5,8 @@
  */
 package toba.login;
 
+import toba.business.User;
+
 /**
  *
  * @author Sarah
