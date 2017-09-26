@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%@ page import="toba.login.User" %>
+<%@ page import="toba.business.User" %>
 <%
     User user = (User) request.getAttribute("user");
     if(user == null) {

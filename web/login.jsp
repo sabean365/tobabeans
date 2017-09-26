@@ -7,6 +7,14 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
+<%@ page import="toba.business.User" %>
+<%
+
+    User user = (User) request.getAttribute("user");
+    if (user == null) {
+        user = new User();
+    }
+%>
 
 <nav>
 	<ul>

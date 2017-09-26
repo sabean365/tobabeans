@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
-<%@ page import="toba.login.User" %>
+<%@ page import="toba.business.User" %>
 <%
 
     User user = (User) request.getAttribute("user");
@@ -30,10 +30,10 @@
 <section class="main">
     <h5>ACCOUNT ACTIVITY</h5>
 
-    <c:if test="${sessionScope.user != null}">
+    <c:if test="${user != null}">
         <p>Welcome ${user.firstName}<br>${user.lastName}</p>
         </c:if>
-    <c:if test="${sessionScope.user == null}">
+    <c:if test="${user == null}">
         <p>Not logged in.</p>
     </c:if>
 

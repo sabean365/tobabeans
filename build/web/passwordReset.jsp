@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
-<%@ page import="toba.login.User" %>
+<%@ page import="toba.business.User" %>
 <%
     
     User user = (User)request.getAttribute("user");

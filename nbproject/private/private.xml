@@ -4,34 +4,25 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/includes/header.html</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/passwordReset.jsp</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/success.html</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/includes/footer.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/loginFailure.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/transaction.jsp</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/nbproject/project.properties</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/stylesheet/toba.css</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/nbproject/project.xml</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/errorJava.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/.git/config</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/transaction.html</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/TransactionServlet.java</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/LoginServlet.java</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/login.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/index.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/success.html</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/nbproject/project.properties</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/PasswordResetServlet.java</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/business/User.java</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/NewCustomerServlet.java</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/accountActivity.jsp</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/newCustomer.jsp</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/UserIO.java</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/.git/config</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/login.html</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/success.jsp</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/transaction.html</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/accountActivity.html</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/User.java</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/src/java/toba/login/LoginServlet.java</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/loginFailure.html</file>
             <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/error404.jsp</file>
+            <file>file:/C:/Users/Sarah/Documents/NetBeansProjects/TOBA/web/login.jsp</file>
         </group>
     </open-files>
 </project-private>
