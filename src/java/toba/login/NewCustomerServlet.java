@@ -63,10 +63,10 @@ public class NewCustomerServlet extends HttpServlet {
             else {
                 // store data in User object
                 user = new User(firstName, lastName, phone, address, city, state, zip, email, username, password);
-                  
+                UserDB.insert(user);
                 message = "";
                 url = "/success.jsp";
-                UserDB.insert(user);
+                
 
             }
             

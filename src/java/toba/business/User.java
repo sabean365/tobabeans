@@ -5,11 +5,19 @@
 package toba.business;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 //Private variables for registration as new user
+@Entity
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long userID; //Primary key
     private String firstName;
     private String lastName;
     private String phone;
@@ -56,6 +64,16 @@ public class User implements Serializable {
     }
 
     //Get and set methods for all variables to be inputed
+    public Long getUserID() {
+        return userID;
+    }
+    
+    public void setUserID(long userID) {
+        this.userID = userID;
+    }
+    
+    
+    
     public String getFirstName() {
         return firstName;
     }

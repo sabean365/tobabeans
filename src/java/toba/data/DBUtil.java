@@ -1,40 +1,20 @@
 /*
-
+@ Sarah Bean 9/27 - DBUtil file using JPA
  */
 package toba.data;
 
-
-import java.sql.*;
+import toba.business.User;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class DBUtil {
 
-    public static void closeStatement(Statement s) {
-        try {
-            if (s != null) {
-                s.close();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-
-    public static void closePreparedStatement(Statement ps) {
-        try {
-            if (ps != null) {
-                ps.close();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }
-
-    public static void closeResultSet(ResultSet rs) {
-        try {
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
+    //create EntityManagerFacory object
+    private static final EntityManagerFactory emf =
+            Persistence.createEntityManagerFactory("TOBAPU2");
+    
+    //call getter to return object emf
+    public static EntityManagerFactory getEmFactory() {
+        return emf;
     }
 }

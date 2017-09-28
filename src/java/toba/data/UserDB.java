@@ -6,101 +6,84 @@
  */
 package toba.data;
 
-import java.sql.*;
-
 
 import toba.business.User;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
+
 
 public class UserDB {
 
-    public static int insert(User user) {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-
-        String query
-                = "INSERT INTO User (firstName, lastName, phone, address, city, state, zip, username, password) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public static void insert(User user) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();       
         try {
-            ps = connection.prepareStatement(query);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3, user.getPhone());
-            ps.setString(4, user.getAddress());
-            ps.setString(5, user.getCity());
-            ps.setString(6, user.getState());
-            ps.setString(7, user.getZip());
-            ps.setString(8, user.getEmail());
-            ps.setString(9, user.getUsername());
-            ps.setString(10, user.getPassword());
-            return ps.executeUpdate();
-        } catch (SQLException e) {
+            
+            em.persist(user);
+            trans.commit();
+        } catch (Exception e) {
             System.out.println(e);
-            return 0;
+            trans.rollback();
         } finally {
-            DBUtil.closePreparedStatement(ps);
-            pool.freeConnection(connection);
+            em.close();
         }
     }
 
-    public static int update(User user) {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-
-        String query = "UPDATE User SET "
-                + "firstName = ?, "
-                + "lastName = ? "
-                + "phone = ? "
-                + "city = ? "
-                + "state = ? "
-                + "zip = ? "
-                + "email = ? "
-                + "password = ? "
-                + "WHERE username = ? ";
-          
+    public static void update(User user) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();     
         try {
-            ps = connection.prepareStatement(query);
-            ps.setString(1, user.getFirstName());
-            ps.setString(2, user.getLastName());
-            ps.setString(3, user.getPhone());
-            ps.setString(4, user.getAddress());
-            ps.setString(5, user.getCity());
-            ps.setString(6, user.getState());
-            ps.setString(7, user.getZip());
-            ps.setString(8, user.getEmail());
-            ps.setString(9, user.getUsername());
-            ps.setString(10, user.getPassword());
-
-            return ps.executeUpdate();
-        } catch (SQLException e) {
+            
+            em.merge(user);
+            trans.commit();
+        } catch (Exception e) {
             System.out.println(e);
-            return 0;
+            trans.rollback();
         } finally {
-            DBUtil.closePreparedStatement(ps);
-            pool.freeConnection(connection);
+            em.close();
         }
     }
+
+    public static void delete(User user) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();        
+        try {
+            
+            em.remove(em.merge(user));
+            trans.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            trans.rollback();
+        } finally {
+            em.close();
+        }       
+    }
+
+    /*public static User selectUser(String username) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT u FROM User u " +
+                "WHERE u.username = :username";
+        TypedQuery<User> q = em.createQuery(qString, User.class);
+        q.setParameter("username", username);
+        try {
+            User user = q.getSingleResult();
+            return user;
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+
+   
     public static boolean usernameExists(String username) {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        String query = "SELECT username FROM User "
-                + "WHERE username = ?";
-        try {
-            ps = connection.prepareStatement(query);
-            ps.setString(1, username);
-            rs = ps.executeQuery();
-            return rs.next();
-        } catch (SQLException e) {
-            System.out.println(e);
-            return false;
-        } finally {
-            DBUtil.closeResultSet(rs);
-            DBUtil.closePreparedStatement(ps);
-            pool.freeConnection(connection);
-        }
-    }
+        User u = selectUser(username);   
+        return u != null;
+    }*/
 }
+
