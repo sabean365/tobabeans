@@ -64,7 +64,7 @@ public class UserDB {
         }       
     }
 
-    /*public static User selectUser(String username) {
+    public static User selectUser(String username) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         String qString = "SELECT u FROM User u " +
                 "WHERE u.username = :username";
@@ -84,6 +84,6 @@ public class UserDB {
     public static boolean usernameExists(String username) {
         User u = selectUser(username);   
         return u != null;
-    }*/
+    }
 }
 
