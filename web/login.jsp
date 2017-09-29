@@ -7,14 +7,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
-<%@ page import="toba.business.User" %>
-<%
-
-    User user = (User) request.getAttribute("user");
-    if (user == null) {
-        user = new User();
-    }
-%>
 
 <nav>
 	<ul>
@@ -29,14 +21,16 @@
     <section class="main">
         <br>
 	<h5>LOGIN</h5>
-	<p>To login to your online banking, please provide your username and password below:</p>
-            
-        <form method="post" action="Login">
+        <p>To login to your online banking, please provide your username and password below:</p><br>
+         
+        
+        <p><i>${message}</i></p>
+        <form action="Login" method="post">
             <input type="hidden" name="action" value="add">
 		<label>Username:</label>
-		<input type="text" name="username" value="${user.username}"><br>
+		<input type="text" name="username"><br>
 		<label>Password:</label>
-		<input type="text" name="password" value="${user.password}"><br>
+		<input type="text" name="password" ><br>
 		<button type="submit" value="login">LOGIN</button>
 	</form>
         

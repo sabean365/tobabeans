@@ -17,8 +17,10 @@ import javax.persistence.TypedQuery;
 public class UserDB {
 
     public static void insert(User user) {
+        try{
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
+        
         trans.begin();       
         try {
             
@@ -30,6 +32,10 @@ public class UserDB {
         } finally {
             em.close();
         }
+        } catch (Exception ex){
+            System.out.print(ex.getMessage());
+        }
+        
     }
 
     public static void update(User user) {

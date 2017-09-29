@@ -10,18 +10,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import toba.data.UserDB;
 
 public class NewCustomerServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest session,
+    protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/newCustomer.jsp";
 
         // get current action
-        String action = session.getParameter("action");
+        String action = request.getParameter("action");
         if (action == null) {
             action = "join";  // default action
         }
@@ -31,17 +32,15 @@ public class NewCustomerServlet extends HttpServlet {
             url = "/newCustomer.jsp";    // the "register" page
         } else if (action.equals("add")) {
             // get parameters from the request
-            String firstName = session.getParameter("firstName");
-            String lastName = session.getParameter("lastName");
-            String phone = session.getParameter("phone");
-            String address = session.getParameter("address");
-            String city = session.getParameter("city");
-            String state = session.getParameter("state");
-            String zip = session.getParameter("zip");
-            String email = session.getParameter("email");
-            String username = session.getParameter("lastName") + session.getParameter("zip");
-            String password = "welcome1"; 
-
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String phone = request.getParameter("phone");
+            String address = request.getParameter("address");
+            String city = request.getParameter("city");
+            String state = request.getParameter("state");
+            String zip = request.getParameter("zip");
+            String email = request.getParameter("email");
+           
             //Declare user object
             User user = null;
             
@@ -62,8 +61,12 @@ public class NewCustomerServlet extends HttpServlet {
             } //If registration form has been filled out correctly, then go to success.html
             else {
                 // store data in User object
-                user = new User(firstName, lastName, phone, address, city, state, zip, email, username, password);
+                try{
+                user = new User(firstName, lastName, phone, address, city, state, zip, email);
                 UserDB.insert(user);
+                } catch (Exception ex){
+                    System.out.print(ex.getMessage());
+                }
                 message = "";
                 url = "/success.jsp";
                 
@@ -71,14 +74,14 @@ public class NewCustomerServlet extends HttpServlet {
             }
             
             //set User object in request; set message in request
-            
-            session.setAttribute("user", user);
-            session.setAttribute("message", message);
+            HttpSession actualSession = request.getSession();
+            actualSession.setAttribute("user", user);
+            actualSession.setAttribute("message", message);
         }
         //forward request and response objects to specified URL
         getServletContext()
                 .getRequestDispatcher(url)
-                .forward(session, response);
+                .forward(request, response);
     }
 
 }

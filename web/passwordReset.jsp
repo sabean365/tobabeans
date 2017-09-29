@@ -35,9 +35,7 @@
 
     <p><i>${message}</i></p>
     <form method="post" action="PasswordReset">
-        <input type="hidden" name="action" value="add"> 
-        <label>Current:</label>
-        <input type="text" name="password" value="${user.password}"><br>     
+        <input type="hidden" name="action" value="add">     
         <label>New:</label>
         <input type="text" name="newPword" value="${param.newPword}"><br>
         <label>Confirm:</label>

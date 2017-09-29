@@ -3,7 +3,6 @@
  */
 package toba.data;
 
-import toba.business.User;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 

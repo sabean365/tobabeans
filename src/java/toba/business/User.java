@@ -48,7 +48,7 @@ public class User implements Serializable {
 
     //Constructor
     public User(String firstName, String lastName, String phone, String address, String city, 
-            String state, String zip, String email, String username, String password) {
+            String state, String zip, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;

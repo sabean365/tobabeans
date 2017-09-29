@@ -28,30 +28,33 @@ public class PasswordResetServlet extends HttpServlet {
         String url = "/passwordReset.jsp";
 
         User user = (User) request.getSession().getAttribute("user");
-        String message;
-        String password = request.getParameter("password");
-        String newPword = request.getParameter("newPword");
-        String confirmPword = request.getParameter("confirmPword");
+        if (user == null) {
+            url = "/newCustomer.jsp";
+        } else {
+            String message;
+            String newPword = request.getParameter("newPword");
+            String confirmPword = request.getParameter("confirmPword");
 
-        // validate the parameters
-        //if some of the parameters are null or empty, display message to fill out all boxes and reload NewCustomer.jsp
-        if (newPword == null || confirmPword == null || newPword.isEmpty() || confirmPword.isEmpty()) {
-            message = "Please fill out all forms.";
-            url = "/passwordReset.jsp";
+            // validate the parameters
+            //if some of the parameters are null or empty, display message to fill out all boxes and reload NewCustomer.jsp
+            if (newPword == null || confirmPword == null || newPword.isEmpty() || confirmPword.isEmpty()) {
+                message = "Please fill out all forms.";
+                url = "/passwordReset.jsp";
+           
+                //Check if new and confirm equal each other
+            } else if (newPword.equals(confirmPword)) {
 
-        } else if (newPword.equals(confirmPword)) {
+                message = "";
+                user.setPassword("newPword");
+                url = "/accountActivity.jsp";
 
-            message = "";
-            user.setPassword("newPword");
-            url = "/accountActivity.jsp";
-
-            //set password, user and message
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            request.setAttribute("message", message);
+                //set password, user and message
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                request.setAttribute("message", message);
+            }
+            //forward request and response objects to specified URL
         }
-        //forward request and response objects to specified URL
-
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
