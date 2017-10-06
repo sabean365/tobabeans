@@ -30,8 +30,6 @@ label { float: left; width: 6em; margin: 0px 20px; }
 
 input[type="text"], input[type="email"]{ width: 15em; margin-left: 20px; margin-bottom: 5px;} 
 
-div { padding-left: 10px; padding-right: 10px; }
-
 a.btn { font-size: 1.2em; text-decoration: none; color: #ffffff; border: 2px solid #ffffff; 
 padding: 4px; float: left; transition: background-color .5s; }
 
@@ -49,30 +47,18 @@ header a.logo { position: absolute; display: block; width: 116px; height: 114px;
 section { padding: 0 30px; background-color: #93e400; }
 
 /*Section main */
-section.main { margin: 0; padding-top: 30px; height: 600px; color: #000d33; }
+section.main { margin: 0; padding-top: 30px; background: #93e400 no-repeat top left; height: 600px; color: #000d33; }
 
 section.main p { margin: 0; padding: 0; color: #000000; }
 
-
-section.main aside { width: 25%; padding-right: 25px; padding-top: 20px; float: right; text-align: left; }
+section.main aside .content { width: 25%; padding-right: 25px; padding-top: 20px; float: right; text-align: left; }
 
 section.main aside .a.btn { font-size: 1.2em; text-decoration: none; color: #ffffff; border: 2px solid #ffffff; 
 padding: 4px 25px; float: right; transition: background-color .5s; }
 
 a.btn:hover { background-color: rgba(0,0,0,.3);}
 
-section.main .content { margin: 0; background: #93e400 no-repeat top left; color: #000d33; }
- 
-
 .mySlides { display: none; margin: 25px;}
-
-section.main div { margin: 0; background: #93e400 no-repeat top center; }
-
-section.main div.hero { position: absolute; width: 40%; top: 100px; left: 55%; }
-
-section.main div.hero h1 { line-height: 1em; font-weight: 700; color: #87cbf0;
-	font-style: italic; text-align: right; text-shadow: 2px 2px 2px #b7b7b7; }
-
 
 /*Section Bottom*/
 section.bottom { margin: 20px 0 0 0; padding: 20px 0px; color: #ffffff;  }

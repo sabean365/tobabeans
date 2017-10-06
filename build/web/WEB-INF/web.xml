@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+        
+    <!-- Define two security roles -->
+    <security-role>
+        <description>system administrators</description>
+        <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <description>programmers</description>
+        <role-name>programmer</role-name>
+    </security-role>
+
+    <!-- Restrict access to all files in the /admin folder -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <!-- Authorize the programmer and service roles -->
+        <auth-constraint>
+            <role-name>programmer</role-name>        
+            <role-name>admin</role-name>
+        </auth-constraint>
+        
+        <!-- Use Secure Data transfer SSL -->
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/admin/login.html</form-login-page>
+            <form-error-page>/admin/loginError.html</form-error-page>
+        </form-login-config>
+     </login-config>
+    
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>toba.login.LoginServlet</servlet-class>
@@ -35,6 +73,7 @@
         <servlet-name>PasswordResetServlet</servlet-name>
         <servlet-class>toba.login.PasswordResetServlet</servlet-class>
     </servlet>
+     
     
     <error-page>
         <error-code>404</error-code>
